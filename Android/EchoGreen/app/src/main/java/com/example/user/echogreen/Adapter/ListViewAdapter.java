@@ -7,6 +7,7 @@ package com.example.user.echogreen.Adapter;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.BaseAdapter;
+        import android.widget.Switch;
         import android.widget.TextView;
 
         import com.example.user.echogreen.R;
@@ -64,7 +65,12 @@ public class ListViewAdapter extends BaseAdapter{
             view = inflater.inflate(R.layout.listview_item, parents, false);
 
             TextView textView=view.findViewById(R.id.list_item);
+
+            Switch switch_1=view.findViewById(R.id.subject_switch);
+
             textView.setGravity(Gravity.CENTER);
+            switch_1.setGravity(Gravity.CENTER);
+            switch_1.setChecked(true);
             textView.setText(subjects.get(position));
         }
 

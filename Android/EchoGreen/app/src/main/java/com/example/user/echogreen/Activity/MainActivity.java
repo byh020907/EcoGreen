@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         Button scheduleButton = (Button) findViewById(R.id.scheduleButton);
         stateButton.setImageResource(R.drawable.on_button);
 
+        startActivity(new Intent(this, SubjectManageActivity.class));
 //        startActivity(new Intent(this, Splash.class));
-        startActivity(new Intent(getApplicationContext(), ScheduleActivity.class));
 
         stateButton.setOnClickListener(new View.OnClickListener() {
             @Override

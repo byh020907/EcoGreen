@@ -17,9 +17,17 @@ public class ScheduleAdapter extends BaseAdapter {
     Context context;
     int count = 40;
     String[] week = {"M", "T", "W", "T", "F"};
+    String[] subjects = new String[35];
 
     public ScheduleAdapter(Context context) {
         this.context = context;
+        setArray();
+    }
+
+    public void setArray() {
+        for (int i = 0; i < subjects.length; i++) {
+            subjects[i] = "hell";
+        }
     }
 
     @Override
@@ -57,12 +65,13 @@ public class ScheduleAdapter extends BaseAdapter {
             v = new TextView(context);
 
             ((TextView)v).setGravity(Gravity.CENTER);
-            ((TextView)v).setText("null");
+            ((TextView)v).setText(subjects[position - 5]);
         }
 
         return v;
     }
 
     public void editItem(String item, int editPosition) {
+        subjects[editPosition - 5] = item;
     }
 }

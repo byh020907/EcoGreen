@@ -33,7 +33,7 @@ public class ScheduleEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_time_table);
 
-        ImageButton backwardButton = (ImageButton) findViewById(R.id.edit_backwrdButton);
+        ImageButton backwardButton = (ImageButton) findViewById(R.id.backwardButtonTimeTable2);
 
         scheduleAdapter = new ScheduleAdapter(this);
 
@@ -73,6 +73,7 @@ public class ScheduleEditActivity extends AppCompatActivity {
                         subject = (String) listViewAdapter.getItem(position);
 
                         scheduleAdapter.editItem(subject, i);
+                        Log.d(String.valueOf(i),"====================================");
                         scheduleAdapter.notifyDataSetChanged();
 
                         dialog.dismiss();

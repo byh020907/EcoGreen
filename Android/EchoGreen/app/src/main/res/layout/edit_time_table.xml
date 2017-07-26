@@ -11,7 +11,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <ImageButton
-                android:id="@+id/edit_backwrdButton"
+                android:id="@+id/backwardButtonTimeTable2"
                 android:layout_gravity="center"
                 android:background="@null"
                 android:adjustViewBounds="true"

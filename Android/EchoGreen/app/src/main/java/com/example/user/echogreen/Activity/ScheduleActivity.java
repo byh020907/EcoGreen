@@ -28,7 +28,7 @@ public class ScheduleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time_table);
 
-        ImageButton backwardButton = (ImageButton) findViewById(R.id.backwrdButton);
+        ImageButton backwardButton = (ImageButton) findViewById(R.id.backwardButtonMain);
         Button editButton = (Button) findViewById(R.id.editSubjectButton);
         Button manageButton = (Button) findViewById(R.id.manageSubjectButton);
 
@@ -39,6 +39,13 @@ public class ScheduleActivity extends AppCompatActivity {
 //        ViewGroup.LayoutParams layoutParams = gridView.getLayoutParams();
 //        layoutParams.height = 50;
 //        gridView.setLayoutParams(layoutParams);
+
+        manageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), SubjectManageActivity.class));
+            }
+        });
 
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override

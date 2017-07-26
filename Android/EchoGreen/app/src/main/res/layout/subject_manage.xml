@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background">
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +15,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <ImageButton
-                android:id="@+id/backwardButtonMain"
+                    android:id="@+id/backwardButtonTimeTable"
                     android:layout_gravity="center"
                     android:background="@null"
                     android:adjustViewBounds="true"
@@ -31,42 +30,13 @@
                     android:textColor="@android:color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Time Table"
+                    android:text="Subject Manage"
                     android:gravity="center" />
             </LinearLayout>
         </android.support.v7.widget.Toolbar>
-        <TextView
+        <ListView
+            android:id="@+id/listview"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Time Table"
-            android:layout_gravity="center_horizontal"
-            android:paddingBottom="10dp"
-            android:paddingTop="10dp"
-            android:textStyle="bold"
-            android:textSize="35dp"/>
-        <GridView
-            android:padding="10dp"
-            android:stretchMode="columnWidth"
-            android:horizontalSpacing="-1px"
-            android:verticalSpacing="-1px"
-            android:numColumns="5"
-            android:layout_width="wrap_content"
-            android:layout_height="500dp"
-            android:id="@+id/gridView"/>
-        <LinearLayout
-            android:layout_gravity="bottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/manageSubjectButton"
-                android:text="과목 관리"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <Button
-                android:id="@+id/editSubjectButton"
-                android:text="수정/입력"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </LinearLayout>
