@@ -16,6 +16,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <ImageButton
+                    android:id="@+id/backwrdButton"
                     android:layout_gravity="center"
                     android:background="@null"
                     android:adjustViewBounds="true"
@@ -33,15 +34,39 @@
                     android:text="Time Table"
                     android:gravity="center" />
             </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Time Table"
-                android:gravity="center_horizontal"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:textStyle="bold"
-                android:textSize="35dp"/>
         </android.support.v7.widget.Toolbar>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time Table"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:textStyle="bold"
+            android:textSize="35dp"/>
+        <GridView
+            android:padding="10dp"
+            android:stretchMode="columnWidth"
+            android:horizontalSpacing="-1px"
+            android:verticalSpacing="-1px"
+            android:numColumns="5"
+            android:layout_width="wrap_content"
+            android:layout_height="500dp"
+            android:id="@+id/gridView"/>
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/manageSubjectButton"
+                android:text="과목 관리"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/editSubjectButton"
+                android:text="수정/입력"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
