@@ -17,17 +17,14 @@ public class ScheduleAdapter extends BaseAdapter {
     Context context;
     int count = 40;
     String[] week = {"M", "T", "W", "T", "F"};
-    String[] subjects = new String[35];
+    static String[] subjects = new String[35];
 
     public ScheduleAdapter(Context context) {
         this.context = context;
-        setArray();
     }
 
-    public void setArray() {
-        for (int i = 0; i < subjects.length; i++) {
-            subjects[i] = "hell";
-        }
+    public String[] getSubjects () {
+        return subjects;
     }
 
     @Override

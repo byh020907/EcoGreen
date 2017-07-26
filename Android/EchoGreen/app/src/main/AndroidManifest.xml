@@ -19,7 +19,7 @@
         <activity android:name=".Splash" />
         <activity android:name=".Activity.ScheduleActivity"/>
         <activity android:name=".Activity.ScheduleEditActivity"/>
-        <activity android:name=".Activity.SubjectManageActivity"/>
+        <!--<activity android:name=".Activity.SubjectManageActivity"/>-->
     </application>
 
 </manifest>

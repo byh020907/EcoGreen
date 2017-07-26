@@ -40,24 +40,17 @@ public class ScheduleActivity extends AppCompatActivity {
 //        layoutParams.height = 50;
 //        gridView.setLayoutParams(layoutParams);
 
-        manageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), SubjectManageActivity.class));
-            }
-        });
+//        manageButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getApplicationContext(), SubjectManageActivity.class));
+//            }
+//        });
 
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), ScheduleEditActivity.class));
-            }
-        });
-
-        manageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
             }
         });
 

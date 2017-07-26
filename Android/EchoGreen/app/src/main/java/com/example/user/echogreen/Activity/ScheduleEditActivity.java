@@ -34,12 +34,21 @@ public class ScheduleEditActivity extends AppCompatActivity {
         setContentView(R.layout.edit_time_table);
 
         ImageButton backwardButton = (ImageButton) findViewById(R.id.backwardButtonTimeTable2);
+        Button confirmButton = (Button) findViewById(R.id.confirm);
 
         scheduleAdapter = new ScheduleAdapter(this);
 
         gridView=(GridView)findViewById(R.id.edit_gridView);
         scheduleAdapter = new ScheduleAdapter(this);
         gridView.setAdapter(scheduleAdapter);
+
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                scheduleAdapter.notifyDataSetChanged();
+            }
+        });
 
         backwardButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +82,6 @@ public class ScheduleEditActivity extends AppCompatActivity {
                         subject = (String) listViewAdapter.getItem(position);
 
                         scheduleAdapter.editItem(subject, i);
-                        Log.d(String.valueOf(i),"====================================");
                         scheduleAdapter.notifyDataSetChanged();
 
                         dialog.dismiss();
