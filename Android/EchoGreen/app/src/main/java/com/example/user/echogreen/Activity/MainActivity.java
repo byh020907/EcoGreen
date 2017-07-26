@@ -23,28 +23,27 @@ public class MainActivity extends AppCompatActivity {
         Button scheduleButton = (Button) findViewById(R.id.scheduleButton);
         stateButton.setImageResource(R.drawable.on_button);
 
+//        startActivity(new Intent(this, Splash.class));
         startActivity(new Intent(getApplicationContext(), ScheduleActivity.class));
 
-//        startActivity(new Intent(this, Splash.class));
+        stateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cnt++;
+                if(cnt% 2 == 0) {
+                    stateButton.setImageResource(R.drawable.on_button);
+                }
+                else {
+                    stateButton.setImageResource(R.drawable.off_button);
+                }
+            }
+        });
 
-//        stateButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cnt++;
-//                if(cnt% 2 == 0) {
-//                    stateButton.setImageResource(R.drawable.on_button);
-//                }
-//                else {
-//                    stateButton.setImageResource(R.drawable.off_button);
-//                }
-//            }
-//        });
-//
-//        scheduleButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(getApplicationContext(), ScheduleActivity.class));
-//            }
-//        });
+        scheduleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ScheduleActivity.class));
+            }
+        });
     }
 }

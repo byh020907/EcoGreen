@@ -41,9 +41,7 @@ public class ScheduleAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup viewGroup) {
         View v = null;
 
-        if(position > count) {
-
-        }
+        if(position > count) {}
 
         if(view == null) {
             v = new TextView(context);
@@ -59,9 +57,12 @@ public class ScheduleAdapter extends BaseAdapter {
             v = new TextView(context);
 
             ((TextView)v).setGravity(Gravity.CENTER);
-            ((TextView)v).setText("5");
+            ((TextView)v).setText("null");
         }
 
         return v;
+    }
+
+    public void editItem(String item, int editPosition) {
     }
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -25,9 +26,10 @@ import java.util.List;
 public class ScheduleEditActivity extends AppCompatActivity {
     GridView gridView;
     ScheduleAdapter scheduleAdapter;
+    String subject;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_time_table);
 
@@ -48,8 +50,8 @@ public class ScheduleEditActivity extends AppCompatActivity {
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ListViewAdapter adapter = new ListViewAdapter();
+            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
+                final ListViewAdapter adapter = new ListViewAdapter();
                 final Dialog dialog = new Dialog(ScheduleEditActivity.this);
                 dialog.setContentView(R.layout.modal);
 
@@ -59,6 +61,20 @@ public class ScheduleEditActivity extends AppCompatActivity {
                 dialog.findViewById(R.id.exitButton).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        ListViewAdapter listViewAdapter = new ListViewAdapter();
+
+                        subject = (String) listViewAdapter.getItem(position);
+
+                        scheduleAdapter.editItem(subject, i);
+                        scheduleAdapter.notifyDataSetChanged();
+
                         dialog.dismiss();
                     }
                 });

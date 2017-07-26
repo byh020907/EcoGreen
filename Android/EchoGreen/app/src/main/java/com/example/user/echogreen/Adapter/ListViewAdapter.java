@@ -1,33 +1,51 @@
 package com.example.user.echogreen.Adapter;
 
-import android.content.Context;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.TextView;
+        import android.content.Context;
+        import android.util.Log;
+        import android.view.Gravity;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.BaseAdapter;
+        import android.widget.TextView;
 
-import com.example.user.echogreen.R;
+        import com.example.user.echogreen.R;
 
-import java.util.ArrayList;
+        import java.lang.reflect.Array;
+        import java.util.ArrayList;
+        import java.util.Arrays;
 
 /**
  * Created by user on 2017-07-26.
  */
 
 public class ListViewAdapter extends BaseAdapter{
-    private ArrayList arrayList = new ArrayList();
-    private String[] subject = {"체육", "문학", "DB", "NT", "한국사", "미술", "미적", "java"};
+//    private String[] subjects = {"체육", "문학", "DB", "NT", "한국사", "미술", "미적", "java"};
+    private ArrayList<String> subjects = new ArrayList<>();
+
+    public void setSubjects() {
+        subjects.add("체육");
+        subjects.add("문학");
+        subjects.add("DB");
+        subjects.add("NT");
+        subjects.add("한국사");
+        subjects.add("미술");
+        subjects.add("JAVA");
+        subjects.add("미적");
+    }
+
+    public ListViewAdapter() {
+        setSubjects();
+    }
 
     @Override
     public int getCount() {
-        return arrayList.size();
+        return subjects.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return arrayList.get(position);
+        return subjects.get(position);
     }
 
     @Override
@@ -45,9 +63,9 @@ public class ListViewAdapter extends BaseAdapter{
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.listview_item, parents, false);
 
-            v = new TextView(context);
-            ((TextView)v).setGravity(Gravity.CENTER);
-            ((TextView)v).setText(subject[position]);
+            TextView textView=view.findViewById(R.id.list_item);
+            textView.setGravity(Gravity.CENTER);
+            textView.setText(subjects.get(position));
         }
 
         return view;
