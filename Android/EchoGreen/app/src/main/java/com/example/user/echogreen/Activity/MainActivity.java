@@ -15,6 +15,7 @@ import com.example.user.echogreen.Adapter.ScheduleAdapter;
 import com.example.user.echogreen.R;
 import com.example.user.echogreen.Splash;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -44,14 +45,19 @@ public class MainActivity extends AppCompatActivity {
                 cnt++;
                 if(cnt% 2 == 0) {
                     stateButton.setImageResource(R.drawable.on_button);
-                    String url = null;
+                    String url = "";
 
                     setParams();
 
                     aq.ajax(url, params, JSONObject.class, new AjaxCallback<JSONObject>() {
                         @Override
                         public void callback(String url, JSONObject json, AjaxStatus status) {
-                            Toast.makeText(aq.getContext(), status.getCode(), Toast.LENGTH_SHORT).show();
+                            if(json != null) {
+
+                                Toast.makeText(aq.getContext(), status.getCode() + ":" + json.toString(), Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(aq.getContext(), "Error:" + status.getCode(), Toast.LENGTH_LONG).show();
+                            }
                         }
                     });
                 }

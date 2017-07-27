@@ -30,7 +30,7 @@ public class ScheduleActivity extends AppCompatActivity {
 
         ImageButton backwardButton = (ImageButton) findViewById(R.id.backwardButtonMain);
         Button editButton = (Button) findViewById(R.id.editSubjectButton);
-        Button manageButton = (Button) findViewById(R.id.manageSubjectButton);
+//        Button manageButton = (Button) findViewById(R.id.manageSubjectButton);
 
         gridView=(GridView)findViewById(R.id.gridView);
         scheduleAdapter = new ScheduleAdapter(this);
